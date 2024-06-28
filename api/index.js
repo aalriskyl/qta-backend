@@ -4,9 +4,9 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
-const RouteUser = require('./routes/user.routes');
-const coffeeMenuRoutes = require('./routes/coffeeMenuRoutes');
-const orderRoutes = require('./routes/orderRoutes');
+const RouteUser = require('../routes/user.routes');
+const coffeeMenuRoutes = require('../routes/coffeeMenuRoutes');
+const orderRoutes = require('../routes/orderRoutes');
 
 const app = express();
 
@@ -25,6 +25,8 @@ app.use('/user', RouteUser);
 app.use('/menu', coffeeMenuRoutes);
 app.use('/orders', orderRoutes);
 
-app.listen(process.env.PORT, () => {
-  console.log('Server running on port', process.env.PORT);
+app.listen(3000, () => {
+  console.log('Server running on port', 3000);
 });
+
+module.exports = app;
